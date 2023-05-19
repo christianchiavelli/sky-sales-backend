@@ -7,55 +7,55 @@ use Illuminate\Http\Request;
 
 class PlaneController extends Controller
 {
-    public function index()
-    {
-        $planes = Plane::all();
-        return response()->json($planes);
-    }
+	public function index()
+	{
+		$planes = Plane::all();
+		return response()->json($planes);
+	}
 
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'model' => 'required|max:255',
-            'manufacturer' => 'required|max:255',
-            'year' => 'required|numeric',
-            'seats' => 'required|integer',
-            'runway_length' => 'required|integer',
-            'price' => 'required|numeric',
-            'image' => 'nullable|string',
-        ]);
+	public function store(Request $request)
+	{
+		$validatedData = $request->validate([
+			'model' => 'required|max:255',
+			'manufacturer' => 'required|max:255',
+			'year' => 'required|numeric',
+			'seats' => 'required|integer',
+			'runway_length' => 'required|integer',
+			'price' => 'required|numeric',
+			'image' => 'nullable|string',
+		]);
 
-        $plane = Plane::create($validatedData);
+		$plane = Plane::create($validatedData);
 
-        return response()->json($plane, 201);
-    }
+		return response()->json($plane, 201);
+	}
 
-    public function show(Plane $plane)
-    {
-        return response()->json($plane);
-    }
+	public function show(Plane $plane)
+	{
+		return response()->json($plane);
+	}
 
-    public function update(Request $request, Plane $plane)
-    {
-        $validatedData = $request->validate([
-            'model' => 'required|max:255',
-            'manufacturer' => 'required|max:255',
-            'year' => 'required|numeric',
-            'seats' => 'required|integer',
-            'runway_length' => 'required|integer',
-            'price' => 'required|numeric',
-            'image' => 'nullable|string',
-        ]);
+	public function update(Request $request, Plane $plane)
+	{
+		$validatedData = $request->validate([
+			'model' => 'required|max:255',
+			'manufacturer' => 'required|max:255',
+			'year' => 'required|numeric',
+			'seats' => 'required|integer',
+			'runway_length' => 'required|integer',
+			'price' => 'required|numeric',
+			'image' => 'nullable|string',
+		]);
 
-        $plane->update($validatedData);
+		$plane->update($validatedData);
 
-        return response()->json($plane);
-    }
+		return response()->json($plane);
+	}
 
-    public function destroy(Plane $plane)
-    {
-        $plane->delete();
+	public function destroy(Plane $plane)
+	{
+		$plane->delete();
 
-        return response()->json(null, 204);
-    }
+		return response()->json(null, 204);
+	}
 }
