@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Plane;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PlaneController extends Controller
 {
 	public function index()
 	{
 		$planes = Plane::all();
-		return response()->json($planes);
+		return view('planes.index', ['planes' => $planes]);
+	}
+
+	public function create()
+	{
+		return view('planes.create');
 	}
 
 	public function store(Request $request)
@@ -25,6 +31,15 @@ class PlaneController extends Controller
 			'image' => 'nullable|string',
 		]);
 
+		if ($request->has('image')) {
+			$image = $request->file('image');
+			$name = Str::slug($request->input('name')) . '_' . time();
+			$folder = '/uploads/images/';
+			$filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+			$this->uploadOne($image, $folder, 'public', $name);
+			$validatedData['image'] = $filePath;
+		}
+
 		$plane = Plane::create($validatedData);
 
 		return response()->json($plane, 201);
@@ -32,7 +47,12 @@ class PlaneController extends Controller
 
 	public function show(Plane $plane)
 	{
-		return response()->json($plane);
+		return view('planes.show', ['plane' => $plane]);
+	}
+
+	public function edit(Plane $plane)
+	{
+		return view('planes.edit', ['plane' => $plane]);
 	}
 
 	public function update(Request $request, Plane $plane)
