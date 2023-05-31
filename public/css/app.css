@@ -18,3 +18,19 @@ footer {
 	height: 15vw;
 	object-fit: cover;
 }
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	background-color: #f5f5f5; /* Cor de fundo da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #acacac; /* Cor do polegar (parte móvel) da barra de rolagem */
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #f5f5f5; /* Cor do rastreamento (parte imóvel) da barra de rolagem */
+	border-radius: 4px;
+}

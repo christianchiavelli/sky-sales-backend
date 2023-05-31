@@ -73,7 +73,7 @@
 
 			<div class="d-flex justify-content-start mt-3">
 				<a href="{{ route('planes.index') }}" class="text-primary text-decoration-none">
-					<i class="bi bi-arrow-left me-2"></i>Voltar
+					Voltar
 				</a>
 			</div>
 
