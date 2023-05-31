@@ -7,6 +7,10 @@
 			<h2>Nossos Aviões</h2>
 			<p>Explore nossa variedade de aviões à venda. Garantimos qualidade e satisfação.</p>
 		</div>
+		<div class="d-flex justify-content-between">
+			<h3></h3>
+			<a class="btn btn-primary mb-4" href="{{ route('planes.create') }}"> Adicionar Avião</a>
+		</div>
 	</div>
 </div>
 
@@ -24,7 +28,7 @@
 					Comprimento da Pista: {{ $plane->runway_length }} <br>
 					Preço: {{ $plane->price }}
 				</p>
-				<a href="{{ route('planes.show',$plane->id) }}" class="btn btn-light">Veja Mais</a>
+				<a href="{{ route('planes.show', $plane->id) }}" class="btn btn-light">Veja Mais</a>
 				<a href="{{ route('planes.edit', $plane->id) }}" class="btn btn-primary">Editar</a>
 			</div>
 		</div>
