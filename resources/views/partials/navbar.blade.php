@@ -11,13 +11,13 @@
 					<a class="nav-link" href="{{ route('planes.index') }}">Nossos Produtos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Quem Somos</a>
+					<a class="nav-link" href="{{ route('about') }}">Quem Somos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Nossos Clientes</a>
+					<a class="nav-link" href="{{ route('customer') }}">Nossos Clientes</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Contato</a>
+					<a class="nav-link" href="{{ route('contact') }}">Contato</a>
 				</li>
 			</ul>
 		</div>

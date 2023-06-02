@@ -28,21 +28,21 @@ class PlaneController extends Controller
 			'seats' => 'required|integer',
 			'runway_length' => 'required|integer',
 			'price' => 'required|numeric',
-			'image' => 'nullable|string',
+			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 		]);
 
 		if ($request->has('image')) {
 			$image = $request->file('image');
-			$name = Str::slug($request->input('name')) . '_' . time();
-			$folder = '/uploads/images/';
-			$filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
-			$this->uploadOne($image, $folder, 'public', $name);
-			$validatedData['image'] = $filePath;
+			$name = Str::slug($request->input('model')) . '_' . time();
+			$folder = '/app/public/images/planes/';
+			$imagePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+			$image->move(storage_path($folder), $name . '.' . $image->getClientOriginalExtension());
+			$validatedData['image'] = 'storage/images/planes/' . $name . '.' . $image->getClientOriginalExtension();
 		}
 
 		$plane = Plane::create($validatedData);
 
-		return response()->json($plane, 201);
+		return redirect()->route('planes.index')->with('success', 'Avião adicionado com sucesso!');
 	}
 
 	public function show(Plane $plane)
@@ -64,18 +64,27 @@ class PlaneController extends Controller
 			'seats' => 'required|integer',
 			'runway_length' => 'required|integer',
 			'price' => 'required|numeric',
-			'image' => 'nullable|string',
+			'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 		]);
+
+		if ($request->has('image')) {
+			$image = $request->file('image');
+			$name = Str::slug($request->input('model')) . '_' . time();
+			$folder = '/app/public/images/planes/';
+			$imagePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+			$image->move(storage_path($folder), $name . '.' . $image->getClientOriginalExtension());
+			$validatedData['image'] = 'storage/images/planes/' . $name . '.' . $image->getClientOriginalExtension();
+		}
 
 		$plane->update($validatedData);
 
-		return response()->json($plane);
+		return redirect()->route('planes.edit', ['plane' => $plane])->with('success', 'Avião atualizado com sucesso!');
 	}
 
 	public function destroy(Plane $plane)
 	{
 		$plane->delete();
 
-		return response()->json(null, 204);
+		return redirect()->route('planes.index')->with('success', 'Avião excluído com sucesso!');
 	}
 }
