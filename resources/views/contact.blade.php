@@ -17,7 +17,7 @@
 				<div class="card-body">
 					<h4 class="card-title">Informações de Contato</h4>
 					<p class="card-text">
-						<strong>Email:</strong> info@lojadeavioes.com<br>
+						<strong>Email:</strong> info@skysales.com<br>
 						<strong>Telefone:</strong> (11) 1234-5678<br>
 						<strong>Endereço:</strong> Rua dos Aviadores, 123, São Paulo, SP
 					</p>

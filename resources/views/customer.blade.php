@@ -14,7 +14,8 @@
 	<div class="row">
 		<div class="col-lg-4 mb-4">
 			<div class="card h-100">
-				<img class="card-img-top" src="https://via.placeholder.com/350" alt="Logo do Cliente">
+				<img class="card-img-top" src="{{ asset('storage/images/customers/customer-1.svg') }}" alt="Fly High Aviation"
+					style="opacity:0;transition: opacity 1s;" onload="this.style.opacity=1">
 				<div class="card-body">
 					<h4 class="card-title">Fly High Aviation</h4>
 					<p class="card-text">"Trabalhar com a Loja de Aviões tem sido uma experiência verdadeiramente transformadora.
@@ -25,7 +26,8 @@
 
 		<div class="col-lg-4 mb-4">
 			<div class="card h-100">
-				<img class="card-img-top" src="https://via.placeholder.com/350" alt="Logo do Cliente">
+				<img class="card-img-top" src="{{ asset('storage/images/customers/customer-2.svg') }}" alt="Elevate Air Travel"
+					style="opacity:0;transition: opacity 1s;" onload="this.style.opacity=1">
 				<div class="card-body">
 					<h4 class="card-title">Elevate Air Travel</h4>
 					<p class="card-text">"Nunca fomos decepcionados com a Loja de Aviões. Seus aviões são de alta qualidade e o
@@ -36,7 +38,8 @@
 
 		<div class="col-lg-4 mb-4">
 			<div class="card h-100">
-				<img class="card-img-top" src="https://via.placeholder.com/350" alt="Logo do Cliente">
+				<img class="card-img-top" src="{{ asset('storage/images/customers/customer-3.svg') }}" alt="AeroSpace Dynamics"
+					style="opacity:0;transition: opacity 1s;" onload="this.style.opacity=1">
 				<div class="card-body">
 					<h4 class="card-title">AeroSpace Dynamics</h4>
 					<p class="card-text">"Nunca fomos decepcionados com a Loja de Aviões. Seus aviões são de alta qualidade e o
@@ -47,7 +50,8 @@
 
 		<div class="col-lg-4 mb-4">
 			<div class="card h-100">
-				<img class="card-img-top" src="https://via.placeholder.com/350" alt="Logo do Cliente">
+				<img class="card-img-top" src="{{ asset('storage/images/customers/customer-4.svg') }}" alt="JetStream Airlines"
+					style="opacity:0;transition: opacity 1s;" onload="this.style.opacity=1">
 				<div class="card-body">
 					<h4 class="card-title">JetStream Airlines</h4>
 					<p class="card-text">"A Loja de Aviões nos ajudou a modernizar nossa frota com seus aviões excelentes. Nossos
@@ -58,7 +62,8 @@
 
 		<div class="col-lg-4 mb-4">
 			<div class="card h-100">
-				<img class="card-img-top" src="https://via.placeholder.com/350" alt="Logo do Cliente">
+				<img class="card-img-top" src="{{ asset('storage/images/customers/customer-5.svg') }}" alt="Skyward Bound"
+					style="opacity:0;transition: opacity 1s;" onload="this.style.opacity=1">
 				<div class="card-body">
 					<h4 class="card-title">Skyward Bound</h4>
 					<p class="card-text">"O serviço personalizado e a qualidade dos aviões da Loja de Aviões são simplesmente
@@ -69,7 +74,8 @@
 
 		<div class="col-lg-4 mb-4">
 			<div class="card h-100">
-				<img class="card-img-top" src="https://via.placeholder.com/350" alt="Logo do Cliente">
+				<img class="card-img-top" src="{{ asset('storage/images/customers/customer-6.svg') }}" alt="Horizon Explorers"
+					style="opacity:0;transition: opacity 1s;" onload="this.style.opacity=1">
 				<div class="card-body">
 					<h4 class="card-title">Horizon Explorers</h4>
 					<p class="card-text">"Loja de Aviões nunca falha em fornecer produtos e serviços de alta qualidade. Eles são
