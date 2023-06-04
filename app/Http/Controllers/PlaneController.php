@@ -8,6 +8,11 @@ use Illuminate\Support\Str;
 
 class PlaneController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('auth');
+		$this->middleware('admin', ['only' => ['edit', 'update', 'destroy', 'create', 'store']]);
+	}
 	public function index()
 	{
 		$planes = Plane::all();

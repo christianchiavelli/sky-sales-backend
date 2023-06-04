@@ -20,7 +20,7 @@
 						@endif
 
 						<div class="form-group row mb-4">
-							<label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+							<label for="email" class="col-sm-4 col-form-label text-md-end">{{ __('E-mail') }}</label>
 
 							<div class="col-md-6">
 								<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
@@ -29,7 +29,7 @@
 						</div>
 
 						<div class="form-group row mb-4">
-							<label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+							<label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Senha') }}</label>
 
 							<div class="col-md-6">
 								<input id="password" type="password"
@@ -50,10 +50,12 @@
 							</div>
 						</div>
 
-						<div class="d-flex justify-content-end">
-							<button type="submit" class="btn btn-primary">
-								{{ __('Login') }}
-							</button>
+						<div class="form-group row">
+							<div class="col-md-6 offset-md-4 d-grid mt-4">
+								<button type="submit" class="btn btn-primary">
+									{{ __('Login') }}
+								</button>
+							</div>
 						</div>
 
 						<div class="d-flex justify-content-center mt-3">
