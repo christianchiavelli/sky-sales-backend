@@ -44,7 +44,7 @@
 										? 'checked' : '' }}>
 
 									<label class="form-check-label" for="remember">
-										{{ __('Remember Me') }}
+										{{ __('Lembrar-me') }}
 									</label>
 								</div>
 							</div>

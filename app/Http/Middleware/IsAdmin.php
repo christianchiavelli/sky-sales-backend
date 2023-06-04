@@ -20,7 +20,7 @@ class IsAdmin
 		if (Auth::user() && Auth::user()->role == 'admin') {
 			return $next($request);
 		}
-		// return redirect('/');
+
 		return abort(403, 'Acesso negado');
 	}
 }

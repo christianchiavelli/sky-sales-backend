@@ -6,6 +6,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
+			@auth
 			<ul class="navbar-nav me-auto">
 				<li class="nav-item">
 					<a class="nav-link" href="{{ route('planes.index') }}">Nossos Produtos</a>
@@ -20,31 +21,32 @@
 					<a class="nav-link" href="{{ route('contact') }}">Contato</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav">
-				@auth
-				<li class="nav-item">
-					<span class="nav-link">Olá, {{ Auth::user()->name }}</span>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ route('logout') }}"
-						onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-						Sair
-					</a>
-					<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-						@csrf
-					</form>
-				</li>
-				@endauth
-
-				@guest
-				<li class="nav-item">
-					<a class="nav-link" href="{{ route('login') }}">Login</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ route('register') }}">Registrar</a>
-				</li>
-				@endguest
-			</ul>
+			@endauth
 		</div>
+		<ul class="navbar-nav">
+			@auth
+			<li class="nav-item">
+				<span class="nav-link">Olá, {{ Auth::user()->name }}</span>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ route('logout') }}"
+					onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+					Sair
+				</a>
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+					@csrf
+				</form>
+			</li>
+			@endauth
+
+			@guest
+			<li class="nav-item">
+				<a class="nav-link" href="{{ route('login') }}">Login</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ route('register') }}">Registrar</a>
+			</li>
+			@endguest
+		</ul>
 	</div>
 </nav>
