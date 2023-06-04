@@ -6,7 +6,7 @@
 		<div class="col-md-6">
 			<div class="card border-0 shadow">
 				<div class="card-body">
-					<h4 class="card-title text-center mb-4">{{ __('Register') }}</h4>
+					<h4 class="card-title text-center mb-4">{{ __('Registro de Novo Usuário') }}</h4>
 
 					<form method="POST" action="{{ route('register') }}">
 						@csrf
@@ -65,11 +65,13 @@
 							</div>
 						</div>
 
-						<div class="d-flex justify-content-end">
+						<div class="form-group row">
+						<div class="col-md-6 offset-md-4 d-grid">
 							<button type="submit" class="btn btn-primary">
-								{{ __('Register') }}
+								{{ __('Registrar') }}
 							</button>
 						</div>
+					</div>
 					</form>
 				</div>
 			</div>
