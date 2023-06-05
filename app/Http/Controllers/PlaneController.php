@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Plane;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class PlaneController extends Controller
 {
@@ -40,12 +41,11 @@ class PlaneController extends Controller
 			$image = $request->file('image');
 			$name = Str::slug($request->input('model')) . '_' . time();
 			$folder = '/app/public/images/planes/';
-			$imagePath = $folder . $name . '.' . $image->getClientOriginalExtension();
 			$image->move(storage_path($folder), $name . '.' . $image->getClientOriginalExtension());
 			$validatedData['image'] = 'storage/images/planes/' . $name . '.' . $image->getClientOriginalExtension();
 		}
 
-		$plane = Plane::create($validatedData);
+		Plane::create($validatedData);
 
 		return redirect()->route('planes.index')->with('success', 'Avião adicionado com sucesso!');
 	}
@@ -76,9 +76,16 @@ class PlaneController extends Controller
 			$image = $request->file('image');
 			$name = Str::slug($request->input('model')) . '_' . time();
 			$folder = '/app/public/images/planes/';
-			$imagePath = $folder . $name . '.' . $image->getClientOriginalExtension();
 			$image->move(storage_path($folder), $name . '.' . $image->getClientOriginalExtension());
 			$validatedData['image'] = 'storage/images/planes/' . $name . '.' . $image->getClientOriginalExtension();
+
+			// Check if the plane has a previous image
+			if ($plane->image) {
+				$oldImage = str_replace('storage', 'public', $plane->image);
+				if (File::exists($oldImage)) {
+					File::delete($oldImage);
+				}
+			}
 		}
 
 		$plane->update($validatedData);

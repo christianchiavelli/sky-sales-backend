@@ -32,7 +32,7 @@
 
 	<div class="card">
 		<div class="card-body">
-			<form action="{{ route('planes.update',$plane->id) }}" method="POST">
+			<form action="{{ route('planes.update',$plane->id) }}" method="POST" enctype="multipart/form-data">
 				@csrf
 				@method('PUT')
 
@@ -73,6 +73,13 @@
 						<label class="form-label" for="price"><strong>Preço</strong></label>
 						<input type="number" id="price" step="0.01" name="price" value="{{ $plane->price }}" class="form-control"
 							placeholder="Preço">
+					</div>
+				</div>
+
+				<div class="row mb-3">
+					<div class="col-md-4 col-12">
+						<label class="form-label" for="image"><strong>Imagem</strong></label>
+						<input type="file" id="image" name="image" class="form-control">
 					</div>
 				</div>
 
