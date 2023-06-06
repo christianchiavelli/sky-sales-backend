@@ -38,19 +38,19 @@
 
 				<div class="row mb-3">
 					<div class="col-md-4 col-12">
-						<label class="form-label" for="model"><strong>Modelo</strong></label>
+						<label class="form-label text-secondary" for="model"><strong>Modelo</strong></label>
 						<input type="text" id="model" name="model" value="{{ $plane->model }}" class="form-control"
 							placeholder="Modelo">
 					</div>
 
 					<div class="col-md-4 col-12">
-						<label class="form-label" for="manufacturer"><strong>Fabricante</strong></label>
+						<label class="form-label text-secondary" for="manufacturer"><strong>Fabricante</strong></label>
 						<input type="text" id="manufacturer" name="manufacturer" value="{{ $plane->manufacturer }}"
 							class="form-control" placeholder="Fabricante">
 					</div>
 
 					<div class="col-md-4 col-12">
-						<label class="form-label" for="year"><strong>Ano</strong></label>
+						<label class="form-label text-secondary" for="year"><strong>Ano</strong></label>
 						<input type="number" id="year" name="year" value="{{ $plane->year }}" class="form-control"
 							placeholder="Ano">
 					</div>
@@ -58,19 +58,19 @@
 
 				<div class="row mb-3">
 					<div class="col-md-4 col-12">
-						<label class="form-label" for="seats"><strong>Assentos</strong></label>
+						<label class="form-label text-secondary" for="seats"><strong>Assentos</strong></label>
 						<input type="number" id="seats" name="seats" value="{{ $plane->seats }}" class="form-control"
 							placeholder="Assentos">
 					</div>
 
 					<div class="col-md-4 col-12">
-						<label class="form-label" for="runway_length"><strong>Comprimento da Pista</strong></label>
+						<label class="form-label text-secondary" for="runway_length"><strong>Comprimento da Pista</strong></label>
 						<input type="number" id="runway_length" name="runway_length" value="{{ $plane->runway_length }}"
 							class="form-control" placeholder="Comprimento da Pista">
 					</div>
 
 					<div class="col-md-4 col-12">
-						<label class="form-label" for="price"><strong>Preço</strong></label>
+						<label class="form-label text-secondary" for="price"><strong>Preço</strong></label>
 						<input type="number" id="price" step="0.01" name="price" value="{{ $plane->price }}" class="form-control"
 							placeholder="Preço">
 					</div>
@@ -78,7 +78,7 @@
 
 				<div class="row mb-3">
 					<div class="col-md-4 col-12">
-						<label class="form-label" for="image"><strong>Imagem</strong></label>
+						<label class="form-label text-secondary" for="image"><strong>Imagem</strong></label>
 						<input type="file" id="image" name="image" class="form-control">
 					</div>
 				</div>

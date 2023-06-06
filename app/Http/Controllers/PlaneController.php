@@ -93,6 +93,11 @@ class PlaneController extends Controller
 		return redirect()->route('planes.edit', ['plane' => $plane])->with('success', 'Avião atualizado com sucesso!');
 	}
 
+	public function purchase(Plane $plane)
+	{
+		return view('planes.purchase', ['plane' => $plane]);
+	}
+
 	public function destroy(Plane $plane)
 	{
 		$plane->delete();

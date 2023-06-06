@@ -24,35 +24,35 @@
 
 			<div class="row mb-3">
 				<div class="col-md-4 col-12">
-					<label class="form-label"><strong>Modelo</strong></label>
+					<label class="form-label text-secondary"><strong>Modelo</strong></label>
 					<p>{{ $plane->model }}</p>
 				</div>
 
 				<div class="col-md-4 col-12">
-					<label class="form-label"><strong>Fabricante</strong></label>
+					<label class="form-label text-secondary"><strong>Fabricante</strong></label>
 					<p>{{ $plane->manufacturer }}</p>
 				</div>
 
 				<div class="col-md-4 col-12">
-					<label class="form-label"><strong>Ano</strong></label>
+					<label class="form-label text-secondary"><strong>Ano</strong></label>
 					<p>{{ $plane->year }}</p>
 				</div>
 			</div>
 
 			<div class="row mb-3">
 				<div class="col-md-4 col-12">
-					<label class="form-label"><strong>Assentos</strong></label>
+					<label class="form-label text-secondary"><strong>Assentos</strong></label>
 					<p>{{ $plane->seats }}</p>
 				</div>
 
 				<div class="col-md-4 col-12">
-					<label class="form-label"><strong>Comprimento da Pista</strong></label>
+					<label class="form-label text-secondary"><strong>Comprimento da Pista</strong></label>
 					<p>{{ $plane->runway_length }}</p>
 				</div>
 
 				<div class="col-md-4 col-12">
-					<label class="form-label"><strong>Preço</strong></label>
-					<p>{{ $plane->price }}</p>
+					<label class="form-label text-secondary"><strong>Preço</strong></label>
+					<p>R$ {{ number_format($plane->price, 2, ',', '.') }}</p>
 				</div>
 			</div>
 

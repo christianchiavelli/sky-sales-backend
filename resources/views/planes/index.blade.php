@@ -9,7 +9,9 @@
 		</div>
 		<div class="d-flex justify-content-between">
 			<h3></h3>
+			@if(Auth::user() && Auth::user()->role == 'admin')
 			<a class="btn btn-primary mb-4" href="{{ route('planes.create') }}"> Adicionar Avião</a>
+			@endif
 		</div>
 	</div>
 </div>
@@ -36,15 +38,20 @@
 					Ano: {{ $plane->year }} <br>
 					Assentos: {{ $plane->seats }} <br>
 					Comprimento da Pista: {{ $plane->runway_length }} <br>
-					Preço: {{ $plane->price }}
+					Preço: R${{ number_format($plane->price, 2, ',', '.') }}
 				</p>
 				<div class="d-flex justify-content-between">
 					<a href="{{ route('planes.show', $plane->id) }}" class="btn btn-light">Veja Mais</a>
+					@if(Auth::user() && Auth::user()->role == 'user')
+					<a href="{{ route('planes.purchase', $plane->id) }}" class="btn btn-primary">Comprar</a>
+					@endif
+					@if(Auth::user() && Auth::user()->role == 'admin')
 					<div>
 						<a href="{{ route('planes.edit', $plane->id) }}" class="btn btn-primary">Editar</a>
 						<button type="button" class="btn btn-danger" data-bs-toggle="modal"
 							data-bs-target="#deleteModal{{ $plane->id }}">Excluir</button>
 					</div>
+					@endif
 				</div>
 			</div>
 		</div>

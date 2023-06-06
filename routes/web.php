@@ -16,12 +16,9 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('/', function () {
 		return view('home.index');
 	})->name('home');
-
 	Route::resource('planes', PlaneController::class);
-
 	Route::view('/about', 'about')->name('about');
-
 	Route::view('/customer', 'customer')->name('customer');
-
 	Route::view('/contact', 'contact')->name('contact');
+	Route::get('/planes/{plane}/purchase', [PlaneController::class, 'purchase'])->name('planes.purchase');
 });
