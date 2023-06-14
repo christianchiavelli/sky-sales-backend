@@ -11,7 +11,7 @@
 					conectar pessoas através de soluções de aviação excepcionais.
 				</p>
 			</div>
-			<div class="card mb-5 shadow">
+			<div class="card mb-5 p-3 shadow">
 				<div class="card-body">
 					<h3 class="card-title mb-3">Nossa História</h3>
 					<p class="card-text text-secondary">
@@ -20,8 +20,6 @@
 						cliente.
 					</p>
 				</div>
-			</div>
-			<div class="card mb-5 shadow">
 				<div class="card-body">
 					<h3 class="card-title mb-3">Nossa Equipe</h3>
 					<p class="card-text text-secondary">
@@ -29,8 +27,6 @@
 						nossa equipe está comprometido em fornecer a melhor experiência para nossos clientes.
 					</p>
 				</div>
-			</div>
-			<div class="card shadow">
 				<div class="card-body">
 					<h3 class="card-title mb-3">Nossos Valores</h3>
 					<ul class="list-group list-group-flush">

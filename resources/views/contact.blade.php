@@ -13,20 +13,20 @@
 
 	<div class="row mb-5">
 		<div class="col-lg-6">
-			<div class="card mb-4">
+			<div class="card mb-4 h-100">
 				<div class="card-body">
 					<h4 class="card-title">Informações de Contato</h4>
 					<p class="card-text">
-						<strong>Email:</strong> info@skysales.com<br>
-						<strong>Telefone:</strong> (11) 1234-5678<br>
-						<strong>Endereço:</strong> Rua dos Aviadores, 123, São Paulo, SP
+						<p><strong>Email:</strong> info@skysales.com</p>
+						<p><strong>Telefone:</strong> (11) 1234-5678</p>
+						<p><strong>Endereço:</strong> Rua dos Aviadores, 123, São Paulo, SP</p>
 					</p>
 				</div>
 			</div>
 		</div>
 
 		<div class="col-lg-6">
-			<div class="card mb-4">
+			<div class="card mb-4 h-100">
 				<div class="card-body">
 					<h4 class="card-title">Formulário de Contato</h4>
 					<form>
